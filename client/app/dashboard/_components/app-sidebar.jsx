@@ -38,7 +38,7 @@ export function AppSidebar() {
     },
     {
       title: "Resume",
-      url: "/resumes",
+      url: "/resumes/123",
       icon: File,
     },
     {
