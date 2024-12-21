@@ -6,6 +6,9 @@ import {
   MicIcon,
   UserIcon,
   VideoIcon,
+  FileTextIcon,
+  BarChartIcon,
+  File,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -55,7 +58,6 @@ export default function Home() {
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
               <FeatureCard
-                className="hover:scale-105 hover:shadow-md transition-all"
                 icon={<MicIcon className="h-10 w-10" />}
                 title="Voice Analysis"
                 description="Our AI analyzes your tone, pace, and clarity to provide actionable feedback."
@@ -70,6 +72,21 @@ export default function Home() {
                 title="Personalized Questions"
                 description="Experience tailored interview questions based on your industry and experience level."
               />
+              <FeatureCard
+                icon={<FileTextIcon className="h-10 w-10" />}
+                title="AI Resume Generator"
+                description="Craft an impressive, ATS-friendly resume with our AI-powered tool."
+              />
+              <FeatureCard
+                icon={<BarChartIcon className="h-10 w-10" />}
+                title="ATS Score Checker"
+                description="Ensure your resume scores high on ATS algorithms for targeted job roles."
+              />
+              <FeatureCard
+                icon={<File className="h-10 w-10" />}
+                title="Report Card"
+                description="Our AI analyzes responses, code, and clarity to provide highly accurate report card."
+              />
             </div>
           </div>
         </section>
@@ -80,26 +97,34 @@ export default function Home() {
               Simple Pricing
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
+              <Link href={"/upgrade"}>
               <PricingCard
-                title="Basic"
-                price="$9.99"
+                title="CodeHire Plus"
+                price="₹49"
                 features={[
                   "5 AI interviews per month",
+                  "7 Resume parsing",
                   "Basic voice analysis",
-                  "Email support",
+                  "Priority support",
+                  "AI Chat Bot",
                 ]}
               />
+              </Link>
+              <Link href={"/upgrade"}>
               <PricingCard
-                title="Pro"
-                price="$19.99"
+                title="CodeHire Pro"
+                price="₹499"
                 features={[
                   "Unlimited AI interviews",
-                  "Advanced voice & video analysis",
+                  "Unlimited Resume parsing",
                   "Personalized question bank",
-                  "Priority support",
+                  "Advanced Code Editor",
+                  "AI Chat Bot",
+                  "Email support",
                 ]}
                 highlighted={true}
               />
+              </Link>
               <PricingCard
                 title="Enterprise"
                 price="Custom"
@@ -131,7 +156,7 @@ export default function Home() {
                   <a
                     href="https://youtube-clone-swart-eight.vercel.app/"
                     className="hover:text-white"
-                    target="blanck"
+                    target="_blank"
                   >
                     Youtube
                   </a>
@@ -140,7 +165,7 @@ export default function Home() {
                   <a
                     href="https://threads-b9qr.onrender.com/"
                     className="hover:text-white"
-                    target="blanck"
+                    target="_blank"
                   >
                     Threads
                   </a>
@@ -149,7 +174,7 @@ export default function Home() {
                   <a
                     href="https://google-notes.onrender.com/"
                     className="hover:text-white"
-                    target="blanck"
+                    target="_blank"
                   >
                     Google Notes
                   </a>
@@ -163,7 +188,7 @@ export default function Home() {
                   <a
                     href="https://www.linkedin.com/in/priyanshu-valiya19012006/"
                     className="hover:text-white"
-                    target="blanck"
+                    target="_blank"
                   >
                     Linkedin
                   </a>
@@ -172,7 +197,7 @@ export default function Home() {
                   <a
                     href="https://x.com/PriyanshuValiya"
                     className="hover:text-white"
-                    target="blanck"
+                    target="_blank"
                   >
                     Twitter
                   </a>
@@ -181,7 +206,7 @@ export default function Home() {
                   <a
                     href="https://www.instagram.com/priyanshu_valiya/"
                     className="hover:text-white"
-                    target="blanck"
+                    target="_blank"
                   >
                     Instagram
                   </a>
@@ -190,7 +215,7 @@ export default function Home() {
                   <a
                     href="https://www.facebook.com/profile.php?id=100093844835271"
                     className="hover:text-white"
-                    target="blanck"
+                    target="_blank"
                   >
                     Facebook
                   </a>

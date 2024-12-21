@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import resumeRoutes from "./routes/ResumeRoutes.js";
 import profileRoutes from "./routes/ProfileRoutes.js";
+import interviewRoutes from "./routes/InterviewRoutes.js";
 import connectDB from "./db/connectDB.js";
 
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(express.static("public"));
 // Routes
 app.use("/api/resume", resumeRoutes);
 app.use("/api/profile", profileRoutes);
+app.use("/api/interview", interviewRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

@@ -32,18 +32,18 @@ export function AppSidebar() {
       icon: Home,
     },
     {
-      title: "Inbox",
-      url: "#",
+      title: "History",
+      url: "/interviews/previous",
       icon: Inbox,
     },
     {
       title: "Resume",
-      url: "/resumes/123",
+      url: "/resumes/190106",
       icon: File,
     },
     {
       title: "Interviews",
-      url: "#",
+      url: "/interviews",
       icon: History,
     },
     {
@@ -53,7 +53,7 @@ export function AppSidebar() {
     },
     {
       title: "Upgrade Plan",
-      url: "#",
+      url: "/upgrade",
       icon: Sparkle,
     },
     {
@@ -89,7 +89,7 @@ export function AppSidebar() {
 
       <SidebarFooter className="pb-8">
         <div className="flex justify-around">
-          <UserButton /> {user?.fullName}{" "}
+          <UserButton className="w-1/3" /><p className="w-2/3">{user?.fullName}</p> 
         </div>
       </SidebarFooter>
     </Sidebar>

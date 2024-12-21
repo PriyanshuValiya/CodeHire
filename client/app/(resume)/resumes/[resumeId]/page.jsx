@@ -4,8 +4,7 @@ import FormSection from "../_components/FormSection";
 import PreviewSection from "../_components/PreviewSection";
 import { ResumeContext } from "@/app/(context)/ResumeContext";
 import dummyData from "../_components/(previews)/dummyData";
-import { Button } from "@/components/ui/button";
-import { Download, Home } from "lucide-react";
+import { Home } from "lucide-react";
 import Link from "next/link";
 
 function GeneratePage() {
@@ -32,7 +31,9 @@ function GeneratePage() {
 
   return (
     <ResumeContext.Provider value={{ resumeInfo, setResumeInfo }}>
-      <Link href={"/dashboard"}><Home /></Link>
+      <Link href={"/dashboard"}>
+        <Home />
+      </Link>
       <div className="max-w-screen-2xl mx-auto flex pb-5">
         <FormSection />
         <PreviewSection />
