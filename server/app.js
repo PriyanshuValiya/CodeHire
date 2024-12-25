@@ -24,6 +24,10 @@ app.use("/api/resume", resumeRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/interview", interviewRoutes);
 
+app.get("/", (req, res) => {
+  res.send("CodeHire Root API");
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
