@@ -88,14 +88,11 @@ function ProfilePage() {
       setLoading(true);
 
       try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_LOCALHOST}/api/profile/getuser`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ profileId }),
-          }
-        );
+        const res = await fetch(`${process.env.NEXT_PUBLIC_LOCALHOST}/api/profile/getuser`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ profileId }),
+        });
 
         if (!res.ok) {
           throw new Error("Failed to fetch profile data");
@@ -129,14 +126,11 @@ function ProfilePage() {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/profile/createuser`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ profileId, githubId: userName }),
-        }
-      );
+      const res = await fetch(`${process.env.NEXT_PUBLIC_LOCALHOST}/api/profile/createuser`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ profileId, githubId: userName }),
+      });
 
       if (!res.ok) {
         throw new Error("Failed to create user");
