@@ -15,7 +15,7 @@ connectDB();
 
 // Middleware
 app.use(cors());
-app.use(cors({ origin: 'https://code-hire-server.vercel.app' }));
+app.use(cors({ origin: 'https://code-hire.vercel.app' }));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.static("public"));
