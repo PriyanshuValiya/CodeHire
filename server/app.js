@@ -18,17 +18,22 @@ const allowedOrigins = [
   "http://localhost:3000",
   "https://code-hire.vercel.app",
 ];
+
 app.use(
   cors({
     origin: function (origin, callback) {
+      console.log("Origin:", origin); 
       if (!origin || allowedOrigins.indexOf(origin) !== -1) {
         callback(null, true);
       } else {
+        console.error(`Blocked by CORS: ${origin}`);
         callback(new Error("Not allowed by CORS"));
       }
     },
   })
 );
+
+app.use(cors({ origin: '*' }));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.static("public"));
