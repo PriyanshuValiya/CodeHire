@@ -55,7 +55,7 @@ function ProjectForm() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/resume/project`,
+        `/api/resume/project`,
         {
           method: "POST",
           headers: {

@@ -99,7 +99,7 @@ function TechnicalPage() {
       const jsonFeedbackResp = JSON.parse(finalResult);
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/interview/savetechnical`,
+        `/api/interview/savetechnical`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

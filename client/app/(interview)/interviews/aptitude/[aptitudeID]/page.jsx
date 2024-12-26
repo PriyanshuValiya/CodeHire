@@ -141,7 +141,7 @@ function AptitudePage({ params }) {
       const jsonFeedbackResp = JSON.parse(finalResult);
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/interview/saveaptitude`,
+        `/api/interview/saveaptitude`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

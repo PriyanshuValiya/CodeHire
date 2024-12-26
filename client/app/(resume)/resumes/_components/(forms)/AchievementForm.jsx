@@ -54,7 +54,7 @@ function AchievementForm() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/resume/acheivement`,
+        `/api/resume/acheivement`,
         {
           method: "POST",
           headers: {

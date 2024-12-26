@@ -58,7 +58,7 @@ function ExperienceForm() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/resume/experience`,
+        `/api/resume/experience`,
         {
           method: "POST",
           headers: {

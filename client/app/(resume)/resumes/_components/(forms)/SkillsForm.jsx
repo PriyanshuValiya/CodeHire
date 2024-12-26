@@ -59,7 +59,7 @@ function SkillsForm() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/resume/skill`,
+        `/api/resume/skill`,
         {
           method: "POST",
           headers: {

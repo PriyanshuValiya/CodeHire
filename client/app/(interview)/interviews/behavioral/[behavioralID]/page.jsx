@@ -115,7 +115,7 @@ function BehavioralPage() {
   useEffect(() => {
     const getAiQuestions = async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/interview/behavioral?id=${behavioralID}`,
+        `/api/interview/behavioral?id=${behavioralID}`,
         {
           method: "GET",
           headers: {
