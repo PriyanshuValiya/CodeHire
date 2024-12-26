@@ -141,7 +141,7 @@ function TechnicalPage() {
   useEffect(() => {
     const getAiQuestions = async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/interview/technical?id=${technicalID}`,
+        `/api/interview/technical?id=${technicalID}`,
         {
           method: "GET",
           headers: {
