@@ -103,7 +103,7 @@ function Interviews() {
       // }
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/interview/${round}`,
+        `/api/interview/${round}`,
         {
           method: "POST",
           headers: {

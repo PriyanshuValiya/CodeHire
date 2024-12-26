@@ -56,7 +56,7 @@ function CheckATS() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/resume/checkats`,
+        `/api/resume/checkats`,
         {
           method: "POST",
           body: formData,

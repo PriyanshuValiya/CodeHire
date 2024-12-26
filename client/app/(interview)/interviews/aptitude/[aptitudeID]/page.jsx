@@ -31,7 +31,7 @@ function AptitudePage({ params }) {
   useEffect(() => {
     const getAiQuestions = async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/interview/aptitude?id=${aptitudeID}`,
+        `/api/interview/aptitude?id=${aptitudeID}`,
         {
           method: "GET",
           headers: {

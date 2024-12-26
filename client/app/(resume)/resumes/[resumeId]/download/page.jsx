@@ -18,7 +18,7 @@ function page() {
     <ResumeContext.Provider value={{ resumeInfo, setResumeInfo }}>
       <div>
         <div className="flex justify-between">
-            <Link href={"/resumes/123"}>
+            <Link href={"/resumes/1901"}>
           <Button>
             <Undo2 />
             Go Back

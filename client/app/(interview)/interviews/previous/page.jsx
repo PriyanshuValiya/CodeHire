@@ -50,7 +50,7 @@ function PreviousInterviews() {
     const getHistory = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_LOCALHOST}/api/interview/gethistory?mail=${userId}`,
+          `/api/interview/gethistory?mail=${userId}`,
           {
             method: "GET",
             headers: {

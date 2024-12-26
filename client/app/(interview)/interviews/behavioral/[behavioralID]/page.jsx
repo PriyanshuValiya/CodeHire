@@ -67,7 +67,7 @@ function BehavioralPage() {
       const jsonFeedbackResp = JSON.parse(finalResult);
 
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_LOCALHOST}/api/interview/savebehavioral`,
+        `/api/interview/savebehavioral`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

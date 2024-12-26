@@ -88,7 +88,7 @@ function ProfilePage() {
       setLoading(true);
 
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_LOCALHOST}/api/profile/getuser`, {
+        const res = await fetch(`/api/profile/getuser`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ profileId }),
@@ -126,7 +126,7 @@ function ProfilePage() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_LOCALHOST}/api/profile/createuser`, {
+      const res = await fetch(`/api/profile/createuser`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ profileId, githubId: userName }),

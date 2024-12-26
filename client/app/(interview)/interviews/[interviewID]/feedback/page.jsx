@@ -19,7 +19,7 @@ function AptitudeFeedback() {
     const getFeedback = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_LOCALHOST}/api/interview/saveaptitude?id=${interviewID}`,
+          `/api/interview/saveaptitude?id=${interviewID}`,
           {
             method: "GET",
             headers: {
