@@ -16,7 +16,7 @@ connectDB();
 // Middleware
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://code-hire.vercel.app",
+  "https://code-hire.priyanshuvaliya.me",
 ];
 
 app.use(
