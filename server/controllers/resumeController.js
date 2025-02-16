@@ -1,10 +1,17 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import fs from "fs";
 import dotenv from "dotenv";
+import cloudinary from "cloudinary";
 dotenv.config();
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 function fileToGenerativePart(path, mimeType) {
   return {
@@ -25,8 +32,19 @@ const checkATS = async (req, res) => {
   const PROMPT = `Job Position: ${jobPosition} and Job Description: ${jobDesc}. ${process.env.RESUME_PROMPT}`;
 
   try {
-    const filePath = req.file.path;
-    const imagePart = fileToGenerativePart(filePath, "image/jpeg");
+    const uploadResponse = await cloudinary.uploader.upload(req.file.path, {
+      folder: "resume_uploads",
+      resource_type: "image",
+    });
+
+    if (!uploadResponse.secure_url) {
+      throw new Error("Failed to upload resume to Cloudinary");
+    }
+
+    const resumeImageURL = uploadResponse.secure_url;
+
+    // const imagePart = fileToGenerativePart(resumeImageURL, "image/jpeg");
+    const imagePart = fileToGenerativePart(req.file.path, "image/jpeg");
     const result = await model.generateContent([PROMPT, imagePart]);
 
     const finalResult = result.response
@@ -37,7 +55,7 @@ const checkATS = async (req, res) => {
     const parsedResponse = JSON.parse(finalResult);
     return res.status(200).json({ parsedResponse });
   } catch (error) {
-    console.error(error);
+    console.error("Error in ATS Check:", error);
     return res
       .status(400)
       .json({ message: "Error in Gemini response generation" });

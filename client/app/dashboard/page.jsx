@@ -115,7 +115,7 @@ function Page() {
         </div>
 
         <Sheet open={sheet} onOpenChange={setSheet}>
-          <SheetContent>
+          <SheetContent className="h-[90vh] flex flex-col pb-5 mr-3 mt-[5%] rounded-2xl">
             <SheetHeader>
               <SheetTitle>{getGreeting()}, How are you?</SheetTitle>
               <SheetDescription>
@@ -147,12 +147,12 @@ function Page() {
               {load && <Skeleton className="w-[75%] h-[60px] rounded-xl" />}
             </div>
 
-            <SheetFooter className="mt-4 flex items-center">
+            <SheetFooter className="absolute bottom-5 mt-4 flex items-center">
               <Input
                 placeholder="Type your message..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="border-2 border-black outline-none"
+                className="w-[280px] z-10 border-2 border-black flex-1 outline-none"
               />
               <Button onClick={handleSendMessage}>
                 <Send />
